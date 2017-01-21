@@ -1,2 +1,1 @@
-sckdbvghgvj
-jbkhbk
+This is the project for detection of alarming sound for aiding deaf person.
