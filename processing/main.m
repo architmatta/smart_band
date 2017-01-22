@@ -6,20 +6,36 @@
 %% Initialization
 clear ; close all; clc
 
-%% ==================== Part 1: Plot the data ====================
+%% ==========Part 1: Plot the data and choose peaks============
 
 audiofile = '..\data\vehicle040.wav';
 
 fprintf('Plotting the data....\n');
-[time, dom_freq, amp] = print3D_audio(audiofile);
+[time, max_freq, amp] = print3D_audio(audiofile);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 fprintf('Plotting the dominant frequency....\n');
-scatter(dom_freq, amp);
+scatter(max_freq, amp);
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ======================= Part 2: Chosing peaks =======================
+%% ======================= Part 2:   =======================
+% sum the amp over frequency to remove repitition
+amp = amp';
+time = time';
+mat = [max_freq, amp];
+[freq,~,ind] = unique(mat(:,1));
+freq_amp = [freq, accumarray(ind,mat(:,2))];
+
+fprintf('Plotting the dominant frequency and its A value....\n');
+scatter(freq_amp(:, 1), abs(freq_amp(:, 2)));
+
+%% ======================= Part 3:   =======================
+
+
+
+
+
