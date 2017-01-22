@@ -15,4 +15,5 @@ fprintf('Plotting the data....\n');
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
-    
+
+%% ======================= Part 2: Chosing peaks =======================

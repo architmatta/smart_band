@@ -10,5 +10,7 @@ noverlap=nfft/2;
 wnd= hamming(nfft,'periodic');
 [S, F, T, P] = spectrogram (Y, wnd, noverlap, nfft, Fs);
 %P is spectral density of signal
+E = 10*log10(abs(P));
+mesh(T,F,E);
 
-mesh(T,F,10*log10(abs(P)));
+%max of E over F at given T
