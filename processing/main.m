@@ -22,7 +22,7 @@ scatter(max_freq, amp);
 fprintf('Program paused. Press enter to continue.\n');
 pause;
 
-%% ======================= Part 2:   =======================
+%% =================== Part 2:   ===================
 % sum the amp over frequency to remove repitition
 amp = amp';
 time = time';
@@ -34,8 +34,7 @@ fprintf('Plotting the dominant frequency and its A value....\n');
 freq_amp = sortrows(freq_amp, -2);
 scatter(freq_amp(:, 1), abs(freq_amp(:, 2)));
 
-%% ======================= Part 3:   =======================
-
+%% ================= Part 3: Features  =============
 
 
 
